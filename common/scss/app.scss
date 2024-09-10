@@ -1,0 +1,60 @@
+html>body{
+	>*{
+		width:100vw;
+	}
+	>header{
+		height:12vh;
+		background-color:white;
+		display:flex;
+		justify-content:center;
+		border-bottom:0.3vh solid $primary;
+		>img{
+			background-color:$primary;
+			position:relative;
+
+			height:9vh;
+			top:1.5vh;
+		}
+	}
+	>section{
+		width:calc(100vw - 10vmin);
+		padding:5vmin;
+		
+		>div{
+			display:flex;
+			flex-direction:column;
+			justify-content:space-around;
+			background-color:white;
+			width:calc(100vw - 20vmin);
+			padding:2.5vmin 5vmin;
+			border-radius:2vmin;
+			>*{
+				margin:5vmin 0;
+			}
+			>div{
+				font-size:9vmin;
+				>span{
+					display:inline-block;
+					width:100%;
+					text-align:right;
+					&:before{
+						content:'₹ ';
+					}
+				}
+			}
+			>button{
+				font-size:10vmin;
+				color:white;
+				padding:2.5vmin;
+				cursor:pointer;
+				background-color:$primary;
+				font-weight:bold;
+				border:0.5vmin solid $primary;
+				&:hover, &:active{
+					background-color:white;
+					color:$primary;
+				}
+			}
+		}
+	}
+}
