@@ -8,8 +8,11 @@
 		<div id="holder">
 			<div>
 				Available Balance :
-				<span id="balance">100</span>
+				<span id="balance"><?php  ?>100</span>
 			</div>
+			<button onclick="loadHash();">
+				Load Hashes
+			</button>
 			<button>
 				Make Payment
 			</button>

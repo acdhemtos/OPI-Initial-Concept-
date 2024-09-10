@@ -1,0 +1,47 @@
+<html>
+    <head>
+  
+    </head>
+    <body>
+		<script src="../customer/common.js"></script>
+		<script>
+			function sendRequest(url,number){
+				url += "?"+gibrish();
+				var xhr = new XMLHttpRequest();
+
+				xhr.open('POST', url, true);
+				
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				
+				xhr.onload = function () {
+					if (xhr.status >= 200 && xhr.status < 300) {
+						alert(xhr.responseText);
+					} else {
+						alert('Request failed. Status:', xhr.status);
+					}
+				};
+
+				xhr.onerror = function () {
+					console.error('Request failed.');
+				};
+				var data = 'number=' + encodeURIComponent(number);
+
+				xhr.send(data);
+			}
+			ans = prompt("Enter Amount in ₹. Positive to Deposit in Payer or Negative to Withdraw from Merchant.");
+			if(isNaN(ans)){
+				alert("Invalid Amount");
+			}else{
+				ans = Math.floor(ans*100)
+				if(ans>0){
+					sendRequest("../../api/admin/deposit.php",ans);
+				}else if(ans<0){
+					//sendRequest(url,-ans);
+				}else{
+					alert("Transaction Amount cannot be 0");
+				}
+			}
+			document.write("Go Back or Reload!");
+		</script>
+	</body>
+</html>

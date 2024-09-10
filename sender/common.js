@@ -1,4 +1,8 @@
-N = 1000
+N = 100
+
+function gibrish(){
+	return Math.floor(Math.random()*100000000000000000).toString();
+}
 
 function reload(){
 	window.location.reload();
@@ -24,3 +28,7 @@ async function hashMessage(arr) {
 
 	return [arr[0],hashHex];
 }
+/*
+async function hashMessage(arr){
+	return [arr[0],"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"];
+}*/
