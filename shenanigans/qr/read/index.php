@@ -10,7 +10,7 @@
 	let i=0;
 	for(i=0;;++i){
 		if(i==device.length){
-			alert("NOT SUITABLE DEVICE.");
+			alert("NO SUITABLE DEVICE.");
 			break;
 		}
 		label = device[i].label;

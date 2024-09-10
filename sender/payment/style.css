@@ -1,0 +1,86 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial;
+}
+
+html {
+  width: 100vw;
+}
+html > body {
+  background-color: #f1f1f1;
+}
+
+html > body > * {
+  width: 100vw;
+}
+html > body > header {
+  height: 12vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-bottom: 0.3vh solid #9c27b0;
+}
+html > body > header > img {
+  background-color: #9c27b0;
+  position: relative;
+  height: 9vh;
+  top: 1.5vh;
+}
+html > body > section {
+  width: calc(100vw - 10vmin);
+  padding: 5vmin;
+}
+html > body > section > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+  width: calc(100vw - 20vmin);
+  padding: 2.5vmin 5vmin;
+  border-radius: 2vmin;
+}
+html > body > section > div > * {
+  margin: 5vmin 0;
+}
+html > body > section > div > div {
+  font-size: 9vmin;
+}
+html > body > section > div > div > span {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
+html > body > section > div > div > span:before {
+  content: "₹ ";
+}
+html > body > section > div > button {
+  font-size: 10vmin;
+  color: white;
+  padding: 2.5vmin;
+  cursor: pointer;
+  background-color: #9c27b0;
+  font-weight: bold;
+  border: 0.5vmin solid #9c27b0;
+}
+html > body > section > div > button:hover, html > body > section > div > button:active {
+  background-color: white;
+  color: #9c27b0;
+}
+
+html > body.yellow {
+  background-color: #f0e68c;
+}
+html > body.red {
+  background-color: #e91e63 !important;
+}
+html > body.red > section > div#holder {
+  background-color: transparent !important;
+}
+html > body.green {
+  background-color: #8bc34a !important;
+}
+html > body.green > section > div#holder {
+  background-color: transparent !important;
+}

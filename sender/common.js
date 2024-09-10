@@ -8,10 +8,6 @@ function reload(){
 	window.location.reload();
 }
 
-function hashExist(){
-	return (sessionStorage.hashes);
-}
-
 function isActive(){
 	return true;
 }
@@ -28,7 +24,7 @@ async function hashMessage(arr) {
 
 	return [arr[0],hashHex];
 }
-/*
-async function hashMessage(arr){
-	return [arr[0],"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"];
-}*/
+
+function hashExist(){
+	return (sessionStorage.hashes);
+}

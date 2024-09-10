@@ -1,0 +1,19 @@
+html>body{
+	&.yellow{
+		background-color:$yellow;
+	}
+	&.red{
+		background-color:$red !important;
+		>section>div#holder{
+			background-color:transparent !important;
+		}
+	}
+	
+	
+	&.green{
+		background-color:$green !important;
+		>section>div#holder{
+			background-color:transparent !important;
+		}
+	}
+}

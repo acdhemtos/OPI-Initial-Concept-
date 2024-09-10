@@ -1,3 +1,11 @@
+function payment(){
+	if(!hashExist()){
+		alert("First Load Hashes.");
+		return false;
+	}
+	window.location.href = "./payment/";
+}
+
 function loadHash(){
 	if(!isActive()){
 		alert("Cannot Reload Hashes due to connection issues.");
@@ -20,7 +28,7 @@ function loadHash(){
 	const interval = setInterval(function(){
 		if(k==0){
 			const xhr = new XMLHttpRequest();
-			xhr.open('POST', "../api/customer/updateHashes.php?"+gibrish(), true);
+			xhr.open('POST', "../api/sender/updateHashes.php?"+gibrish(), true);
 			xhr.setRequestHeader('Content-Type', 'application/json');
 			xhr.onreadystatechange = function () {
 				if (xhr.readyState === XMLHttpRequest.DONE) {
