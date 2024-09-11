@@ -2,7 +2,7 @@
 
 header('Content-Type: text/plain');
 
-if((@include "../connection.php") === false){
+if((@include "./connection.php") === false){
     die("0 failed to include connection");
 }
 

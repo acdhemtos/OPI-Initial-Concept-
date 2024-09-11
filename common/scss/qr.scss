@@ -8,12 +8,15 @@ html>body{
 			background-color:transparent !important;
 		}
 	}
-	
-	
 	&.green{
 		background-color:$green !important;
 		>section>div#holder{
 			background-color:transparent !important;
 		}
+	}
+	
+	>section>div#holder>canvas{
+		width:calc(100vw - 20vmin);
+		height:calc(100vw - 20vmin);
 	}
 }

@@ -20,10 +20,10 @@ html > body > header {
   background-color: white;
   display: flex;
   justify-content: center;
-  border-bottom: 0.3vh solid #9c27b0;
+  border-bottom: 0.3vh solid #2196F3;
 }
 html > body > header > img {
-  background-color: #9c27b0;
+  background-color: #2196F3;
   position: relative;
   height: 9vh;
   top: 1.5vh;
@@ -60,13 +60,13 @@ html > body > section > div > button {
   color: white;
   padding: 2.5vmin;
   cursor: pointer;
-  background-color: #9c27b0;
+  background-color: #2196F3;
   font-weight: bold;
-  border: 0.5vmin solid #9c27b0;
+  border: 0.5vmin solid #2196F3;
 }
 html > body > section > div > button:hover, html > body > section > div > button:active {
   background-color: white;
-  color: #9c27b0;
+  color: #2196F3;
 }
 
 html > body.yellow {
