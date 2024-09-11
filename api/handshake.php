@@ -3,37 +3,30 @@
 header('Content-Type: text/plain');
 
 if((@include "./connection.php") === false){
-    die("0 failed to include connection");
+    die("-1");
 }
 
 
-$hashes = json_decode(file_get_contents('php://input'), true);
 
-if(!(json_last_error() === JSON_ERROR_NONE)){
-	die("0 Invalid JSON DATA");
-}
+$data = json_decode(file_get_contents('php://input'), true);
 
-if(count($hashes) != 100){
-	die("0 Invalid Length");
-}
+mt_srand(time());
 
-foreach($hashes as $hash){
-	if(! validHash($hash)){
-		die("0 Invalid Hash".$hash);
-	}
-}
+$hash = $conn->query('SELECT `hash` FROM `hashes` WHERE i='.mt_rand(0, 99).';')->fetch_assoc()['hash'];
 
-try{
-	for ($i = 0; $i < 100; $i++) {
-		$conn->query('UPDATE hashes SET hash = "'.$hashes[$i].'" WHERE i='.$i.';');
-	}
-	die("9");
-}
-catch(Exception $e){
-	echo "1 ".$e->getMessage();
-}
+$txt = $data["code"].$data["mid"].$hash.$data["amt"];
+$txtHash = hash('sha256', $txt);
 
+$new = $data["mid"].$hash.$data["amt"].$data["code"];
+$resHash = hash('sha256', $new);
 
+$conn->query('INSERT INTO `handshakes` (`id`, `paise`, `response`) VALUES (NULL, "'.$data["amt"].'", "'.$resHash.'");');
+
+$id = $conn->insert_id;
+
+$data = array('id' => $id,'hash' => $txtHash);
+
+echo json_encode($data);
 
 
 ?>

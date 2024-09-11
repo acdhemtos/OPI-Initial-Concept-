@@ -24,7 +24,6 @@ async function hashMessage(arr) {
 
 	return [arr[0],hashHex];
 }
-
 function hashExist(){
 	return (sessionStorage.hashes);
 }

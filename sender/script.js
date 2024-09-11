@@ -38,13 +38,15 @@ function loadHash(){
 						let code = parseInt(res[0]);
 						if(code==9){
 							alert("Hashes Updated Successfully.");
-							sessionStorage.hashes = JSON.stringify(hashes);
+							localStorage.hashes = JSON.stringify(hashes);
+							localStorage.removeItem('merchants');
 						}else if(code==0){
 							alert("Couldn't Update Hashes.");
 						}else{
 							alert("Something went Fatally Wrong.");
 							if(hashExist()){
 								localStorage.removeItem('hashes');
+								localStorage.removeItem('merchants');
 							}
 						}
 					} else {

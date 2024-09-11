@@ -3,7 +3,13 @@ CREATE TABLE `secure_pay`.`hashes` (`i` INT NOT NULL , `hash` CHAR(64) NOT NULL 
 
 CREATE TABLE `secure_pay`.`transactions` (`time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `paise` BIGINT UNSIGNED NOT NULL ) ENGINE = InnoDB; 
 
+CREATE TABLE handshakes (
+   id INT AUTO_INCREMENT NOT NULL,
+   paise BIGINT UNSIGNED NOT NULL,
+   primary key (id)
+) ENGINE=InnoDB;
 
+ALTER TABLE `handshakes` ADD `response` CHAR(64) NOT NULL AFTER `paise`; 
 
 INSERT INTO `hashes` (`i`, `hash`) VALUES ('0', '################################################################');
 INSERT INTO `hashes` (`i`, `hash`) VALUES ('1', '################################################################');
